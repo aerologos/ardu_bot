@@ -3,19 +3,28 @@
  */
 class motor {
 public:
-  void init(int pin) {
-    _pin = pin;
+  void init(int in1, int in2) {
+    _in1 = in1;
+    _in2 = in2;
 
-    pinMode(_pin, OUTPUT);
+    pinMode(_in1, OUTPUT);
+    pinMode(_in2, OUTPUT);
   }
 
-  void spin() {
-    digitalWrite(_pin, HIGH);
+  void spinForward() {
+    digitalWrite(_in1, HIGH);
+    digitalWrite(_in2, LOW);
+  }
+
+  void spinBackward() {
+    digitalWrite(_in1, LOW);
+    digitalWrite(_in2, HIGH);
   }
 
   void idle() {
-    digitalWrite(_pin, LOW);
+    digitalWrite(_in1, LOW);
+    digitalWrite(_in2, LOW);
   }
 private:
-  int _pin;
+  int _in1, _in2;
 };

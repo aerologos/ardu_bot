@@ -7,4 +7,5 @@ public:
   virtual int get_front();
   virtual int get_left();
   virtual int get_right();
+  virtual int get_max_distance();
 };

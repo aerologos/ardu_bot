@@ -7,15 +7,16 @@ public:
   virtual void move();
 
 protected:
-  int Dist_front_prev = 0;
+  int Prev_front_distance = -1;// not initialized
 
   bool between(int a, int b, int accuracy) {
-    return a - accuracy < b && b < a + accuracy;
+    return a - accuracy <= b && b <= a + accuracy;
   }
 
-  bool potentially_stuck(int dist_front) {
+  bool potentially_stuck(int dist_front, int min_dist, int max_dist) {
     return
-      dist_front == Dist_front_prev
-      || between(dist_front, Dist_front_prev, 5);
+      dist_front < min_dist
+      || between(dist_front, Prev_front_distance, 5)
+      || between(Prev_front_distance, dist_front, 5);
   }
 };

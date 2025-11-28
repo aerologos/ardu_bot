@@ -1,11 +1,11 @@
 **Introduction**\
-This is a refactored firmware for Arduino UNO robot that I made following the [Michail Momot](https://vk.com/momotmvu) book:\
+This is a firmware for Arduino robot that is made for robots of Bobic series:\
 https://www.litres.ru/book/mihail-momot/mobilnye-roboty-na-baze-arduino-23878269/
 
 The main (though extremely simple) logic is located within ardu_bot.ino file.
 
 **Movement:**\
-Though, it is oriented for four wheel chasis, the abstractions allow to adapt it to any type of chasis.\
+Though, only two implementations present front wheel chasis, the abstractions allow to adapt it to any type of chasis.\
 You just need to provide your own implementation of chasis.h looking at the existing example: chasis_four_wheels.h
 
 **Orientation:**\
